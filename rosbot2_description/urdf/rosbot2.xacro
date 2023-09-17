@@ -1,0 +1,171 @@
+<?xml version="1.0" ?>
+<robot name="rosbot2" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+<xacro:include filename="$(find rosbot2_description)/urdf/materials.xacro" />
+<xacro:include filename="$(find rosbot2_description)/urdf/rosbot2.trans" />
+<xacro:include filename="$(find rosbot2_description)/urdf/rosbot2.gazebo" />
+<xacro:include filename="$(find rosbot2_description)/urdf/gazebo_plugins.xacro" />
+<xacro:include filename="$(find rosbot2_description)/urdf/lidar.xacro" />
+
+
+<link name="base_link">
+  <inertial>
+    <origin xyz="4.279328882950714e-05 2.9051439187655854e-05 0.10428263442590485" rpy="0 0 0"/>
+    <mass value="1.4518464481591138"/>
+    <inertia ixx="0.020264" iyy="0.020266" izz="0.013558" ixy="-2.6e-05" iyz="-7e-06" ixz="-1.1e-05"/>
+  </inertial>
+  <visual>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find rosbot2_description)/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find rosbot2_description)/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="lw_wheel_1">
+  <inertial>
+    <origin xyz="-0.005332559043823348 -0.005301027638289532 2.5915426843534095e-05" rpy="0 0 0"/>
+    <mass value="0.07153770183519433"/>
+    <inertia ixx="7.9e-05" iyy="7.9e-05" izz="5.4e-05" ixy="2.4e-05" iyz="-0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.120208 -0.120208 -0.049" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find rosbot2_description)/meshes/lw_wheel_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.120208 -0.120208 -0.049" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find rosbot2_description)/meshes/lw_wheel_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="lb_wheel_1">
+  <inertial>
+    <origin xyz="0.0053411577210747685 -0.005309626315541993 2.5915426843658995e-05" rpy="0 0 0"/>
+    <mass value="0.071537701835195"/>
+    <inertia ixx="7.9e-05" iyy="7.9e-05" izz="5.4e-05" ixy="-2.4e-05" iyz="-0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.116673 -0.116673 -0.049" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find rosbot2_description)/meshes/lb_wheel_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.116673 -0.116673 -0.049" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find rosbot2_description)/meshes/lb_wheel_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="rw_wheel_1">
+  <inertial>
+    <origin xyz="-0.005301561544221747 0.005333092949754453 2.591542684363818e-05" rpy="0 0 0"/>
+    <mass value="0.07153770183519474"/>
+    <inertia ixx="7.9e-05" iyy="7.9e-05" izz="5.4e-05" ixy="-2.4e-05" iyz="-0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.116673 0.116673 -0.049" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find rosbot2_description)/meshes/rw_wheel_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.116673 0.116673 -0.049" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find rosbot2_description)/meshes/rw_wheel_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="rb_wheel_1">
+  <inertial>
+    <origin xyz="0.005309092409606309 0.0053406238151391255 2.5915426843027556e-05" rpy="0 0 0"/>
+    <mass value="0.07153770183519464"/>
+    <inertia ixx="7.9e-05" iyy="7.9e-05" izz="5.4e-05" ixy="2.4e-05" iyz="-0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.120208 0.120208 -0.049" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find rosbot2_description)/meshes/rb_wheel_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.120208 0.120208 -0.049" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find rosbot2_description)/meshes/rb_wheel_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="lidar_1">
+  <inertial>
+    <origin xyz="-0.003200717764024405 0.00024346130297415316 0.024536865472861047" rpy="0 0 0"/>
+    <mass value="0.10080697429817698"/>
+    <inertia ixx="4.6e-05" iyy="2.6e-05" izz="2.8e-05" ixy="-0.0" iyz="0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.067672 -9.9e-05 -0.298" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find rosbot2_description)/meshes/lidar_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.067672 -9.9e-05 -0.298" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="file://$(find rosbot2_description)/meshes/lidar_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<joint name="rev_lw" type="continuous">
+  <origin xyz="0.120208 0.120208 0.049" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="lw_wheel_1"/>
+  <axis xyz="0.707107 0.707107 0.0"/>
+</joint>
+
+<joint name="rev_lb" type="continuous">
+  <origin xyz="-0.116673 0.116673 0.049" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="lb_wheel_1"/>
+  <axis xyz="-0.707107 0.707107 0.0"/>
+</joint>
+
+<joint name="rev_rw" type="continuous">
+  <origin xyz="0.116673 -0.116673 0.049" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="rw_wheel_1"/>
+  <axis xyz="0.707107 -0.707107 0.0"/>
+</joint>
+
+<joint name="rev_rb" type="continuous">
+  <origin xyz="-0.120208 -0.120208 0.049" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="rb_wheel_1"/>
+  <axis xyz="-0.707107 -0.707107 0.0"/>
+</joint>
+
+<joint name="lidar" type="fixed">
+  <origin xyz="0.067672 9.9e-05 0.298" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="lidar_1"/>
+</joint>
+
+</robot>

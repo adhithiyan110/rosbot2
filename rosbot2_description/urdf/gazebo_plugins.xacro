@@ -1,0 +1,26 @@
+<?xml version="1.0" ?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" >
+
+<!--################# DIFFERENTIAL DRIVE PLUGIN ######################-->
+    <gazebo>
+    <plugin name="object_controller" filename="libgazebo_ros_planar_move.so">
+
+      <command_topic>cmd_vel</command_topic>
+      <odometry_topic>odom</odometry_topic>
+      <odometry_frame>odom</odometry_frame>
+      <odometry_rate>20.0</odometry_rate>
+      <robot_base_frame>base_link</robot_base_frame>
+      <publish_odom>true</publish_odom>
+      <publish_odom_tf>true</publish_odom_tf>
+      <publish_wheel_tf>false</publish_wheel_tf>
+
+    </plugin>
+    </gazebo>
+
+    <gazebo>
+        <plugin name="joint_state_publisher" filename="libgazebo_ros2_joint_state_publisher.so">
+            <joint_name>rev_rb,rev_rw,rev_lb,rev_lw</joint_name>
+        </plugin>
+    </gazebo>
+
+</robot>
